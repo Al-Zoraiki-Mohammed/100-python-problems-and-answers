@@ -1,21 +1,26 @@
-def merge_the_tools(string, k):
-    n = len(string)
-    t = []
-    for i in range(0,n,k):
-        t.append(string[i:i+k])
-    
-    for j in range(len(t)):
+"""Task36"""
+
+def delete_redendant(words):
+    new_words = []
+    for j in range(len(words)):
         buffer =''
-        for item in t[j]:
-            if item not in buffer:
-                buffer += item
-        print(buffer)        
+        for letter in words[j]:
+            if letter not in buffer:
+                buffer += letter
+        new_words.append(buffer)
+    return new_words
+
+
+def split_string(string, k):
+    sub_strings = []
+    for i in range(0,len(string),k):
+        sub_strings.append(string[i:i+k])
+    unique_substring = delete_redendant(sub_strings)
+    return unique_substring
 
 
 if __name__ == '__main__':
-    string, k = input(), int(input())
-    merge_the_tools(string, k)
-
-# Example input
-# s = AABCAAADA
-# k = 3
+    string = input('Type any string: ')
+    k = int(input('Type length of substrings:'))
+    for word in split_string(string,k):
+        print(word)

@@ -1,4 +1,5 @@
-print('----'*10+'New Run :)'+'----'*10)
+"""Task22"""
+
 def wrap(string, max_width):
     r_txt=string[0:max_width]+'\n'
     c=0
@@ -10,7 +11,10 @@ def wrap(string, max_width):
 
     return r_txt
 
+
 if __name__ == '__main__':
-    string, max_width = input(), int(input())
+    print('----'*10+'New Run :)'+'----'*10)
+    string, max_width = input('type string: '), int(input('widh: '))
     result = wrap(string, max_width)
     print(result)
+    

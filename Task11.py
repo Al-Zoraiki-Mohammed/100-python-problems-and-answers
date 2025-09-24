@@ -1,61 +1,37 @@
-print('----'*25)
-if __name__ == '__main__':
+"""Task11"""
+
+def read_data(n=0):
     data=[]
     names=[]
     scores=[]
-    for i in range(int(input('Enter Number of Studets N: '))):
+    for i in range(n):
         name = input(f'Enter the name of studet number{i+1}:  ')
         score = float(input(f'Enter the score of studet number{i+1}:  '))
         names.append(name)
         scores.append(score)
         data.append([score,name])
-    
-    sorted_data = sorted(data)
+    return data
 
-    print(sorted_data)
-    
+def find_second_lowest(sorted_data):
     first= sorted_data[0][0]
     second = False
     last = sorted_data[0][0]
     for i,j in sorted_data:
         if i>first and not second:
-            print(j)
-            second = True                  
+            second = True 
+            return(j)                 
         elif i ==last and second:
-             print(j)
+             return(j)
         elif i> first and second:
             break
                 
         last = i
 
-            
-        
-    
-        
 
-            
-
-           
-       
-''' 4
-Sona
--25.001
-Mona
--25.0001
-Mini
--25.000
-Rita
--25.0
-'''      
-        
-''' 5
-Harry
-37.21
-Berry
-37.21
-Tina
-37.2
-Akriti
-41
-Harsh
-39'''
+if __name__ == '__main__':
+    no_of_students = int(input('Enter Number of Studets N: '))
+    data = read_data(no_of_students)
+    sorted_data = sorted(data)
+    print(sorted_data)
+    second_lowest = find_second_lowest(sorted_data)
+    print(second_lowest)

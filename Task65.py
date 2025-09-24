@@ -1,5 +1,6 @@
-""""""
+"""Task65"""
 import random
+
 
 def fill_array(size = 100):
     array = []
@@ -7,10 +8,12 @@ def fill_array(size = 100):
         array.append(random.randint(1,size))
     return array
 
+
 def print_array(array):
     print('array elements: ', end='')
     for element in array:
         print(element, end=" ")
+
 
 if __name__ == "__main__":
     size = int(input('Type the size of the array: '))

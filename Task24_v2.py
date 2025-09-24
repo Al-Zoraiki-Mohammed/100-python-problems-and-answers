@@ -1,10 +1,10 @@
-# short answer for Task24 using built-in function bin(),hex() and oct()
+"""Task24"""
+
 def print_formatted(n):
     padding = len(bin(n))-2
     for i in range (n):
         decimal = i+1
-        hexa = hex(decimal).upper()
-        hexa = hexa[2:]
+        hexa = hex(decimal).upper()[2:]
         octal = oct(decimal)[2:]
         binary = bin(decimal)[2:]
 
@@ -14,5 +14,5 @@ def print_formatted(n):
                f'{binary:>{padding}}')
 
 if __name__ == '__main__':
-    n = int(input())
+    n = int(input('Type the maximum value to print (int): '))
     print_formatted(n)

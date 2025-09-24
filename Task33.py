@@ -1,33 +1,28 @@
-team_count = 3
-players_count = 4
-team_results = []
- 
-max_team_number = winner_number = max_result = 0
-for team_number in range(1, team_count+1):
-    team_result = []
-    max_for_player = max_player_number = 0
- 
-    for player_number in range(1, players_count + 1):
-        player_score = input("Enter {} team {} player result: ".format(
-            team_number,
-            player_number,
-        )).split()
-        player_sum = sum([int(score) for score in player_score])
-        if player_sum > max_for_player:
-            max_for_player, max_player_number = player_sum, player_number
- 
-    print("Team {}. The winner is the player {} with the score of {}".format(
-        team_number,
-        max_player_number,
-        max_for_player,
-    ))
- 
-    if max_for_player > max_result:
-        max_team_number, winner_number = team_number, max_player_number
-        max_result = max_for_player
- 
-print("The best result was shown by player {} of the team {} with the score of {}".format(
-    winner_number,
-    max_team_number,
-    max_result,
-))
+"Task33"
+
+result = dict()
+
+def play(team, player):
+    result[team].append(int(input(f'Type team {team} player {player} result: ')))
+
+
+def print_winners():
+    winners = []
+    for team, players in result.items():
+        print(f'team no: {team}, winner no: {players.index(max(players)) + 1}, socre: {max(players)}')
+        winners.append(max(players))
+    print('--'*30)
+    print(f'The overall score is: {max(winners)} from team: {winners.index(max(winners)) + 1}')
+    print('--'*30)
+
+
+def start_competition(teams, players):
+    for team in range(1,teams +1):
+        result[team]= []
+        for player in range(1, players +1):
+            play(team, player)
+    
+
+if __name__ == "__main__":
+   start_competition(3,4)
+   print_winners()

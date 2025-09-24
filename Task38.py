@@ -1,4 +1,4 @@
-#Task38:
+"""Task38"""
 def check_number(number):
     if number % 2 == 0:
         print(f'The number {number} is even :)')

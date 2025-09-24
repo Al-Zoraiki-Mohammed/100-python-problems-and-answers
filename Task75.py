@@ -1,13 +1,15 @@
-""""""
+"""Task75"""
+
 accounts = {'1':'Mohammed', '2': 'Ahmed', '3': 'Omar'}
+
 
 def find_cleint(account_no):
     for key, value in accounts.items():
         if key == account_no:
             client = value
             return client
-    
     return 'client not found'
+
 
 def find_client_v2(account_no):
     return accounts.get(account_no)
@@ -47,5 +49,3 @@ if __name__ == "__main__":
     account_name = input('Type account name to add: ')
     add_client(account_no, account_name)
     print(f'Updated accounts are: {accounts}')
-
-    

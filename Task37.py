@@ -1,3 +1,5 @@
+"""Task37"""
+
 def calc_happiness(array, A, B):
     ''''''
     happiness = 0
@@ -7,6 +9,7 @@ def calc_happiness(array, A, B):
         elif item in B:
             happiness -=1
     print(happiness)
+
 
 if __name__ =='__main__':
     n, m = input('Type n and m values separted with space: ').split()
@@ -25,3 +28,4 @@ if __name__ =='__main__':
     sample output:
     1
     '''
+    

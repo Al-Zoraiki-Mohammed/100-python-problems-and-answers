@@ -1,3 +1,5 @@
+"""Task29_v2"""
+
 def minion_game(word):
     Kevin_scores = 0
     Stuart_scores = 0
@@ -10,7 +12,6 @@ def minion_game(word):
         else:
             Stuart_scores += length - i 
 
-
     if Stuart_scores > Kevin_scores:
         print(f'Stuart {Stuart_scores}')
     elif Stuart_scores < Kevin_scores:
@@ -20,6 +21,5 @@ def minion_game(word):
 
 
 if __name__ == '__main__':
-    s = input('input a word: ')
-    minion_game(s)
-
+    word = input('input a word: ')
+    minion_game(word)

@@ -1,97 +1,62 @@
 '''This code converts number from one system to another from scratch,
- without using built-in function (bin(),hex(),etc.). which is in file Task24_v2
+ without using built-in functions (bin(),hex(),etc.) which have been done
+in script Task24_v2
 '''
-print('New Run :)'.center(100,'-'))
 
-# method for hexa conversion
-def to_hexa(n):
-    n = int(n)
-    local_hexa =''
-    if n <=9:
-        local_hexa = n
-    elif n in (10,11,12,13,14,15):
-        if n ==10 : local_hexa='A'
-        elif n ==11 : local_hexa='B'
-        elif n ==12 : local_hexa='C'
-        elif n ==13 : local_hexa='D'
-        elif n ==14 : local_hexa='E'
-        elif n ==15 : local_hexa='F'
-    elif n>=16:
-        d=''
-        while (n>0):
-            d += str(to_hexa(n % 16))
-            n=int(n/16) 
-        local_hexa = ''.join(reversed(d))
-    return local_hexa
-
-# method for octal conversion
-def to_octal(n):
-    l_octal =''
-    if n <=7:
-            l_octal = n
+def to_octal(decimal):
+    octal =''
+    if decimal <= 7:
+            octal = decimal
     else:
-        d=''
-        while (n>0):
-            d += str(to_octal(n % 8))
-            n=int(n/8) 
-        l_octal= ''.join(reversed(d))
-
-    return l_octal
-
+        d = ''
+        while (decimal > 0):
+            d += str(to_octal(decimal % 8))
+            decimal =int(decimal/8) 
+        octal= ''.join(reversed(d))
+    return octal
 
 
+def to_hexa(decimal):
+    hexa =''
+    if decimal <= 9:
+        hexa = decimal
+    elif decimal in (10,11,12,13,14,15):
+        if decimal == 10 : hexa = 'A'
+        elif decimal == 11 : hexa = 'B'
+        elif decimal == 12 : hexa = 'C'
+        elif decimal == 13 : hexa = 'D'
+        elif decimal == 14 : hexa = 'E'
+        elif decimal == 15 : hexa = 'F'
+    elif decimal >= 16:
+        d = ''
+        while (decimal > 0):
+            d += str(to_hexa(decimal % 16))
+            decimal = int(decimal/16) 
+        hexa = ''.join(reversed(d))
+    return hexa
 
-    
 
+def to_binary(decimal):
+    binary = ''
+    while (decimal>0):
+        binary += str(decimal % 2)
+        decimal= int(decimal /2)
+    binary = ''.join(reversed(binary))
+    return binary
 
 
 def print_formatted(number):
-    padding = len(bin(number))-2
+    padding = len(bin(number)) - 2
     for i in range(number):
         decimal = i+1
-        str_decimal =''
-        octal = ''
-        hexa = ''
-        binary = ''
-        d=decimal
-
-        #To binary
-        while (d>0):
-            binary += str(d % 2)
-            d = int(d /2)
-        binary = ''.join(reversed(binary))
-        #binary = reversed_string = binary[::-1]
-        d=decimal
-        #To Hexadecimal
-        hexa = to_hexa(decimal)
-
-        d=decimal
-
-        #To Ocatal
         octal = to_octal(decimal)
-
-
-
-    
+        hexa = to_hexa(decimal)
+        binary = to_binary(decimal)
+        
         print(f'{decimal:>{padding}}', f'{octal:>{padding}}', f'{hexa:>{padding}}', f'{binary:>{padding}}')
 
 
-
-    # your code goes here
 if __name__ == '__main__':
+    print(' New Run :) '.center(100,'-'))
     n = int(input('Enter number  n: '))
     print_formatted(n)
-
-    
-
-
-
-
-
-#file Task24_v2 solve the question using built-in function (bin(),hex(),etc.)
-
-'''        deccimal = i+1
-        octal = oct(deccimal)
-        hexa = hex(deccimal)
-        binary =  bin(deccimal) 
-'''

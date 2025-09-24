@@ -1,12 +1,16 @@
+"""Task71"""
 import numpy as np
+
 
 def is_identity(arr):
     eye_arr = np.eye(arr.shape[0])
     return np.all(eye_arr == arr)
 
+
 def is_diagonal(arr):
     result = arr * np.eye(arr.shape[0])
     return np.array_equal(result,arr)
+
 
 def is_scalar(arr):
     if is_diagonal(arr):  
@@ -15,12 +19,14 @@ def is_scalar(arr):
     else:
         return False
 
+
 def is_sparse(arr):
     """a sparse matrix is a matrix in which most of the elements are zero."""
     arr_zeros = np.zeros(arr.shape)
     sum_of_zeros = np.sum(arr_zeros== arr)
     return sum_of_zeros >= (arr.shape[0] * arr.shape[1]/2)
-        
+
+
 def check_matrix_type(arr):
     if is_identity(arr) == True:
         return 'Identity Matrix'
@@ -32,6 +38,7 @@ def check_matrix_type(arr):
         return  'Parse Matrix'
     else:
         return f'matrix is a normal array of type {arr.shape}'
+
 
 if __name__ == "__main__":
     arr = np.array([[0,1,0],[0,2,0],[0,0,2]])

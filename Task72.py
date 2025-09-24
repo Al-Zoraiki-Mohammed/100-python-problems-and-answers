@@ -7,6 +7,7 @@ def generate_fib_recrussion(previous, last, limit):
         print(last)
         generate_fib_recrussion(last , previous+last, limit)
 
+
 def genterate_fib_loop(previous, last, limit):
     """Alternative recommened solution using while loop"""
     while last < limit:

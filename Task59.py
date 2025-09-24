@@ -1,3 +1,4 @@
+"""Task59"""
 def guess_password(password):
     trials = 0
     for i in range(26):
@@ -8,6 +9,7 @@ def guess_password(password):
                 if guess == password:
                     return guess, trials
     return 0
+
 
 if __name__ == "__main__":
     password = input('Type a password: ')

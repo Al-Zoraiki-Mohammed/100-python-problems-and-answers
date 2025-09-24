@@ -1,3 +1,5 @@
+"""Task73"""
+
 def get_first_letters_of(string):
     words = string.strip().split(' ')
     letters =[]    

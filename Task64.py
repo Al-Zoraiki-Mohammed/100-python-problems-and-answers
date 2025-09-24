@@ -1,3 +1,4 @@
+"""Task64"""
 
 def read_elemnts():
     array = []
@@ -15,14 +16,17 @@ def check_frequency(array):
         if elm == element:
             frequency +=1
     return element, frequency
-            
+
+
 def print_array(array):
     print(f"original array: ", end ="")
     for elm in array:
         print(elm, end = " ")
+
 
 if __name__ == "__main__":
     array = read_elemnts()
     element, frequency = check_frequency(array)
     print_array(array)
     print(f'\n {element} is repeated {frequency} times.')
+    

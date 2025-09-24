@@ -1,4 +1,4 @@
-#Task49:
+"""#Task49:"""
 def log_in(real_pin_code, balance, max_attempts=5):
     entered_pin_code = input('Type your pin code: ')
     while real_pin_code != entered_pin_code and  max_attempts >=1:
@@ -10,8 +10,10 @@ def log_in(real_pin_code, balance, max_attempts=5):
     else:
         print(f'Your balance is {balance}')
 
+
 if __name__ == "__main__":
     real_pin_code = '1234'
     max_attempts = 5
     balance = '5000$'
     log_in(real_pin_code,balance, max_attempts)
+    

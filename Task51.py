@@ -25,3 +25,4 @@ def print_prime_numbers(n):
 if __name__ == "__main__":
     n = input_positive_number()
     print_prime_numbers(n)
+    

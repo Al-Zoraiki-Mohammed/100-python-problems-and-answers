@@ -10,8 +10,10 @@ def check_prime(number):
     else:
         print(f'{number} is not a prime number')
 
+
 if __name__ == "__main__":
     number = int( input('Type a number: '))
     while number <=0:
         number = int( input('Type a number > 0: '))
     check_prime(number)
+    

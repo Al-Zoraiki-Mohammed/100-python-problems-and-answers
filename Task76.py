@@ -2,12 +2,14 @@
 accounts = {'1': {'Name': 'Mohammed', 'PIN_code': '123', 'balance': '40000$' }, 
             '2': {'Name': 'Ali', 'PIN_code': '456', 'balance': '30000$' }}
 
+
 def print_client_details(client):
     if client != None:
         for key, value in client.items():
             print(f'{key}: {value}')
     else:
         print('No client found')
+
 
 def find_client(account_no):
     if account_no in accounts.keys():
@@ -34,6 +36,7 @@ def add_client(account_no, **kwargs):
     else: 
         print(f'account number: {account_no} or account name is not valid ')
 
+
 if __name__ == '__main__':
     print(f'Initial accounts are: {accounts}')
 
@@ -51,3 +54,4 @@ if __name__ == '__main__':
     add_client(account_no=account_no,
                 account_name=account_name,PIN_code=PIN_code, balanc=balance)
     print(f'Updated accounts are: {accounts}')
+    

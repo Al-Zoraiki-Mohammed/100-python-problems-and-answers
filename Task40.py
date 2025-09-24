@@ -1,4 +1,4 @@
-#Task40:
+"""Task40"""
 def check_applicants(has_refrence, age=0, has_license ='y'):
     if has_refrence.lower() == 'y':
         print('Hired :) ')
@@ -10,6 +10,7 @@ def check_applicants(has_refrence, age=0, has_license ='y'):
             print('Hired :) ')
         else:
             print('Rejected :( ')
+
 
 if __name__ == "__main__":
     has_refrence = input('Do you have a refrence? y/n: ')

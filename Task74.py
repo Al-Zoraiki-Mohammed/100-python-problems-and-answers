@@ -1,5 +1,8 @@
-""""""
+"""Task74"""
+
 import string 
+
+
 def count_letters(text=""):
     words = len(text.strip().split(' '))
     letters = 0
@@ -20,6 +23,7 @@ def count_letters(text=""):
     letters = capital + small
 
     return words, letters, punctuations, spaces, capital, small
+
 
 if __name__ == "__main__":
     text = input('Type a sting: ')

@@ -10,6 +10,7 @@ def read_marks(number_of_marks):
         sum += mark
     return sum, number_of_fails
 
+
 def calculate_average(number_of_marks):
     """Calculate average"""
     sum, number_of_fails = read_marks(number_of_marks)
@@ -19,6 +20,8 @@ def calculate_average(number_of_marks):
     else:
         print(f" Congrats, you get pass, and your average is {average}")
 
+
 if __name__ == "__main__":
     number_of_marks = int(input('enter number of marks: '))
     calculate_average(number_of_marks)
+    

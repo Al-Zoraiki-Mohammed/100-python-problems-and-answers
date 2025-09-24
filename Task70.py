@@ -1,5 +1,8 @@
+"""Task70"""
+
 import numpy as np
 np.random.seed(42)
+
 
 def read_pisitive_size(no_rows=0, no_columns=0):
     while no_rows < 1:
@@ -8,12 +11,14 @@ def read_pisitive_size(no_rows=0, no_columns=0):
         no_columns = int(input('Type number of columns(>0): '))
     return no_rows, no_columns
 
+
 def generate_array(start, end, size, is_ordered):
     """This function can genereate ranom numbers or ordered numbers"""
     no_rows, no_columns = size
     if is_ordered:
         return np.arange(start, no_rows * no_columns + 1).reshape(size)
     return np.random.randint(start, end, size)
+
 
 def sum_rows(arr):
     sum_rows = []
@@ -27,6 +32,7 @@ def sum_columns(arr):
     for i in range(arr.shape[1]):
         sum_cols.append(sum(arr[:,i]))
     return np.array(sum_cols)
+
 
 def sum_rows_cols(arr):
     return np.sum(arr, axis=1), np.sum(arr, axis=0)

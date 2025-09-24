@@ -1,3 +1,4 @@
+"""Task68"""
 def input_validated_number():
     """Validation using try except"""
     while True:

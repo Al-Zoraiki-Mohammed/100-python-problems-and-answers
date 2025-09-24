@@ -1,33 +1,44 @@
-if __name__ == '__main__':
-    n = int(input('Enter size N: '))
-    arr=[]
+"""Task13"""
 
-    for i in range(n):
-        comand, *value= input('enter comand: ').split()
+def read_data():
+    comand, *value= input('enter comand: ').split()
+    return comand, value
 
-        if comand=='insert':
-            arr.insert(int(value[0]),int(value[1]))
 
-        elif comand =='print':
-            print(arr)
+def execute(arr, comand, value):
+    if comand=='insert':
+        arr.insert(int(value[0]),int(value[1]))
 
-        elif comand =='pop':
-            arr.pop()
+    elif comand =='print':
+        print(arr)
+
+    elif comand =='pop':
+        arr.pop()
         
-        elif comand == 'append':
-            arr.append(int(value[0]))
+    elif comand == 'append':
+        arr.append(int(value[0]))
 
-        elif comand == 'remove':
-            if int(value[0]) in arr:
-                arr.remove(int(value[0]))
-            else: print(f'No value such {int(value[0])} to remove !')
+    elif comand == 'remove':
+        if int(value[0]) in arr:
+            arr.remove(int(value[0]))
+        else: print(f'No value such {int(value[0])} to remove !')
 
-        elif comand =='reverse':
-            arr.reverse()
-        elif comand =='sort':
-            arr.sort()
+    elif comand =='reverse':
+        arr.reverse()
+    elif comand =='sort':
+        arr.sort()
 
-        else: print('Comand not clear')
+    else: print('comand not correct')
+
+
+
+if __name__ == '__main__':
+    arr = []
+    no_operations = int(input('How many operations U wanna execute?: '))
+    for _ in range(no_operations):
+        comand, value = read_data()
+        execute(arr, comand, value)
+    print(arr)
 
 
 ''' Sample input:

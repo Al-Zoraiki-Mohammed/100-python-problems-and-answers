@@ -1,9 +1,11 @@
+"""Task63"""
 import random
 import string
 
 def generate_keys(keys_no=1, word_no=4, word_length=4, separtor='-'):
     for i in range(keys_no):
         print(f'key [{i+1}]: {generate_key(word_no=4, word_length=4, separtor="-")}')
+
 
 def generate_key(word_no=4, word_length=4, separtor='-'):
     key = ""
@@ -13,6 +15,7 @@ def generate_key(word_no=4, word_length=4, separtor='-'):
         else:
             key += generate_words(word_length=4) + separtor
     return key 
+
 
 def generate_words(word_length=4):
     word = ""
